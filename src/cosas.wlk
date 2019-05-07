@@ -11,15 +11,18 @@ object bumblebee {
 	method transformar() { transformadoEnAuto = not transformadoEnAuto }
 }
 
-object paqueteDeLadrillos {
+class PaqueteDeLadrillos {
 	
 	var ladrillos
+	const pesoUnitario = 2
+
 	
 	method peso (cantidad){
 		
 		ladrillos = cantidad
+		}
 		
-		return cantidad * 2
+	method peso () {return ladrillos * pesoUnitario
 	}
 	
 	method nivelPeligrosidad () {
@@ -34,8 +37,9 @@ object arenaAGranel {
 	var peso 
 	
 	method peso (x) {
-		peso = x
-		return peso
+		peso = x}
+		
+	method peso () {return peso
 		
 	}
 	
@@ -47,17 +51,7 @@ object arenaAGranel {
 
 object bateriaAntiaerea {
 	
-	var estaConMisiles 
-	
-	method cargarMisiles() {
-		
-		estaConMisiles = true
-	}
-	
-	method descargarMisiles() {
-		
-		estaConMisiles = false
-	}
+	var property estaConMisiles = false 
 	
 	method peso () {
 		

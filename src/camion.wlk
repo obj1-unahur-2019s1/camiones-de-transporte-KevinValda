@@ -1,6 +1,6 @@
 import cosas.*
 
-object camion {
+class Camion {
 	const property cosas = []
 	
 	method cargar(unaCosa) {
@@ -25,4 +25,19 @@ object camion {
 		
 		return cosas.filter({n=> n.nivelPeligrosidad() > nivel})
 	}
+	
+	method objetosMasPeligrososQue(cosa) {
+		
+		return self.objetosPeligrosos(cosa.nivelPeligrosidad())
+		
+	}
+	
+	method puedeCircularEnRuta (nivelMaxPeligrosidad) {
+		
+		return self.objetosPeligrosos(nivelMaxPeligrosidad).isEmpity()
+		
+	}
+	
+	
+	
 }
